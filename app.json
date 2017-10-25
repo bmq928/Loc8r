@@ -1,0 +1,22 @@
+{
+    "name": "app",
+    "description": "Example contact list app using MEAN",
+    "keywords": [
+      "MEAN",
+      "Angular",
+      "Node",
+      "MongoDB",
+      "mLab"
+    ],
+    // "repository": "https://github.com/chrisckchang/mean-contactlist-angular2",
+    "success_url": "/",
+    "formation": {
+      "web": {
+        "quantity": 1,
+        "size": "free"
+      }
+    },
+    "addons": [
+      "mongolab"
+    ]
+  }
