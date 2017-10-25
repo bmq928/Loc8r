@@ -2,7 +2,7 @@ var mongoose = require("mongoose");
 var uri = "mongodb://localhost/AdvancedSpa";
 
 if(process.env.NODE_ENV === 'production'){
-    uri = process.env.MONGO_URI
+    uri = process.env.MONGO_URI;
 }
 
 mongoose.connect(uri);
