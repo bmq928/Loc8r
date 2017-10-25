@@ -1,0 +1,21 @@
+<div class="center" style="text-align:center">
+    <h3>Login</h3>
+    <form>
+        <div class="text-danger">{{vm.error}}</div>
+
+        <div>
+            <label for="vm.email">Email :
+                <input type="text" ng-model="vm.email">
+            </label>
+        </div>
+
+        <div>
+            <label for="vm.password">Password :
+                <input type="password" ng-model="vm.password">
+            </label>
+        </div>
+
+        <button type="submit" class="btn btn-success" ng-click="vm.onSubmit()">Send</button>
+        <button class="btn btn-success" ng-click="vm.onCancel() ">Cancel</button>
+    </form>
+</div>

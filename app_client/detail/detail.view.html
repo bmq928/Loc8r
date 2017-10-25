@@ -1,0 +1,58 @@
+<div class="row">
+    <div class="span5">
+        <img src="http://maps.googleapis.com/maps/api/staticmap?center={{vm.locDetail.coords[0]}},{{vm.locDetail.coords[1]}}&zoom=17&size=400x350&sensor=false&markers={{vm.locDetail.coords[0]}},{{vm.locDetail.coords[1]}}&scale=2"
+            class="img-polaroid" alt="Sample Image" style="width: 320px;height: 300px;">
+    </div>
+    <div class="span7">
+        <h2>{{vm.locDetail.name}}</h2>
+        <h4 class="muted">{{vm.locDetail.address}}</h4>
+        <div ng-repeat="open in vm.locDetail.openings">
+            <h6>
+                <p>Open at : {{open.opening | numToTime}}</p>
+            </h6>
+            <h6>
+                <p>Close at : {{open.closing | numToTime}}</p>
+            </h6>
+            <h6>
+                <p>Serve In :
+                    <span ng-repeat="day in open.days">
+                        {{day.value}} -
+                    </span>
+                </p>
+            </h6>
+        </div>
+
+        <hr>
+        <h5>Total Rating
+            <rating-star num-star="vm.locDetail.averageRating"></rating-star>
+        </h5>
+        <p class="muted">
+            <div ng-if="vm.locDetail.closed">But unfortunately it is closed</div>
+        </p>
+        <br>
+        <p>
+            <div ng-if="vm.isLogedIn">
+                <button class="btn btn-success btn-large" ng-click="vm.addReview()">Add Review</button>
+            </div>
+            <div ng-if="!vm.isLogedIn">
+                <button class="btn btn-success btn-large">Login To Review</button>
+            </div>
+        </p>
+    </div>
+</div>
+<div class="row">
+    <div class="span12">
+        <ul class="nav nav-tabs">
+            <li class="active">
+                <a data-toggle="tab" href="#tab-1">Review</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div id="tab-1" class="tab-pane fade in active">
+                <div ng-repeat="review in vm.locDetail.reviews">
+                    <comment reivew="review"></comment>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

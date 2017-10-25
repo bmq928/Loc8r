@@ -1,0 +1,27 @@
+<div class="navbar navbar-fixed-top navbar-inverse">
+    <div class="navbar-inner">
+        <div class="container">
+            <div class="brand">Loc8r</div>
+            <div class="nav-collapse collapse navbar-responsive-collapse">
+                <ul class="nav">
+                    <li><a href="#!/home">Home</a></li>
+                    <li><a href="#!/about">About</a></li>
+                </ul>
+                <div ng-if="!navvm.isLogedIn">
+                    <ul class="nav pull-right">                        
+                        <li><a href="" ng-click="navvm.addLogin()">Login</a></li>
+                        <li class="divider-vertical"></li>
+                        <li><a href="" ng-click="navvm.addRegister()">Register</a></li>
+                    </ul>
+                </div>
+                <div ng-if="navvm.isLogedIn">
+                    <ul class="nav pull-right">                        
+                        <li><a>{{navvm.user.name}}</a></li>
+                        <li class="divider-vertical"></li>
+                        <li><a id="logout" href="" ng-click="navvm.logout()">Lougout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
