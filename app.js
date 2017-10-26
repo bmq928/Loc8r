@@ -73,6 +73,12 @@ app.use(passport.session());
 // app.use('/', index);
 // app.use('/users', users);
 app.use("/api", apiRouter);
+app.get('/', function(request, response) {
+  response.render('pages/index')
+});
+app.get('/cool', function(request, response) {
+  response.send(cool());
+});
 
 app.use(function (req, res, next) {
   res.sendFile(path.join(__dirname, 'app_client', 'index.html'));
