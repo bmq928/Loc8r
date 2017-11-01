@@ -19,7 +19,7 @@
                 .then(function (response) {
                     console.log(response);
                     saveToken(response.data.token);
-                    $window.location.href = '#!/home';
+                    // $window.location.href = '#!/home';
                 })
         }
 
@@ -28,7 +28,8 @@
                 .then(function (response) {
                     console.log(response);
                     saveToken(response.data.token);
-                    $window.location.href = '#!/home';
+                    console.log(currentUser());
+                    // $window.location.href = '#!/home';
                 });
         }
 
