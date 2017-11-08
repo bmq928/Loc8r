@@ -34,6 +34,7 @@
                 .then(function () {
                     vm.isLogedIn = authentication.isLogedIn();
                     console.log("after login " + vm.isLogedIn);
+                    vm.user = authentication.currentUser();
                     // $route.reload();
                 })
         }
@@ -45,6 +46,7 @@
             }).closed
             .then(function () {
                 vm.isLogedIn = authentication.isLogedIn();
+                vm.user = authentication.currentUser();
                 console.log("after register " + vm.isLogedIn);
                 // $route.reload();
             })
