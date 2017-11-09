@@ -20,7 +20,7 @@ app.set('port', port);
  * Create HTTP server.
  */
 
-var server = app.listen(process.env.PORT || 3000);
+var server = app.listen(app.get('port'));
 /**
  * Listen on provided port, on all network interfaces.
  */
