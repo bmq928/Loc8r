@@ -84,9 +84,10 @@ app.get('/cool', function(request, response) {
 
 app.use(function (req, res, next) {
   res.sendFile(path.join(__dirname, 'app_client', 'index.html'));
+  console.log("send file succees")
 });
 
-console.log("send file complete");
+// console.log("send file complete");
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
