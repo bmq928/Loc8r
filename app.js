@@ -21,40 +21,40 @@ require("./app_api/config/passport");
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-var uglifiedCode = "";
-var clientFiles = [
-  "public/angular/angular.js",
-  "public/angular-route/angular-route.js",
-  "public/angular-sanitize/angular-sanitize.min.js",
-  "public/angular-ui-bootstrap/ui-bootstrap-tpls-2.5.0.min.js",
-  "app_client/app.js",
-  "app_client/home/home.controller.js",
-  "app_client/auth/register/register.controller.js",
-  "app_client/auth/login/login.controller.js",
-  "app_client/detail/detail.controller.js",
-  "app_client/addReview/addReview.controller.js",
-  "app_client/about/about.controller.js",
-  "app_client/common/filters/numToTime.filter.js",
-  "app_client/common/filters/displayParagraph.filter.js",
-  "app_client/common/services/locationData.service.js",
-  "app_client/common/services/authentication.service.js",
-  "app_client/common/directives/navigator/navigator.directive.js",
-  "app_client/common/directives/comment/comment.directive.js",
-  "app_client/common/directives/pageFooter/pageFooter.directive.js",
-  "app_client/common/directives/pageHeader/pageHeader.directive.js",
-  "app_client/common/directives/locationInfo/locationInfo.directive.js",
-  "app_client/common/directives/ratingStar/ratingStar.directive.js",
-  "app_client/common/directives/navigator/navigator.controller.js"
-];
-for (let i in clientFiles) {
-  let content = fs.readFileSync(clientFiles[i], "utf8");
-  uglifiedCode += uglify.minify(content, { compress: false }).code;
-}
-// var uglifiedCode = uglify.minify(clientFiles, { compress: false }).code;
-fs.writeFile('public/client_app.min.js', uglifiedCode, function (err) {
-  if (err) console.log(err);
-  else console.log("minify success");
-});
+// var uglifiedCode = "";
+// var clientFiles = [
+//   "public/angular/angular.js",
+//   "public/angular-route/angular-route.js",
+//   "public/angular-sanitize/angular-sanitize.min.js",
+//   "public/angular-ui-bootstrap/ui-bootstrap-tpls-2.5.0.min.js",
+//   "app_client/app.js",
+//   "app_client/home/home.controller.js",
+//   "app_client/auth/register/register.controller.js",
+//   "app_client/auth/login/login.controller.js",
+//   "app_client/detail/detail.controller.js",
+//   "app_client/addReview/addReview.controller.js",
+//   "app_client/about/about.controller.js",
+//   "app_client/common/filters/numToTime.filter.js",
+//   "app_client/common/filters/displayParagraph.filter.js",
+//   "app_client/common/services/locationData.service.js",
+//   "app_client/common/services/authentication.service.js",
+//   "app_client/common/directives/navigator/navigator.directive.js",
+//   "app_client/common/directives/comment/comment.directive.js",
+//   "app_client/common/directives/pageFooter/pageFooter.directive.js",
+//   "app_client/common/directives/pageHeader/pageHeader.directive.js",
+//   "app_client/common/directives/locationInfo/locationInfo.directive.js",
+//   "app_client/common/directives/ratingStar/ratingStar.directive.js",
+//   "app_client/common/directives/navigator/navigator.controller.js"
+// ];
+// for (let i in clientFiles) {
+//   let content = fs.readFileSync(clientFiles[i], "utf8");
+//   uglifiedCode += uglify.minify(content, { compress: false }).code;
+// }
+// // var uglifiedCode = uglify.minify(clientFiles, { compress: false }).code;
+// fs.writeFile('public/client_app.min.js', uglifiedCode, function (err) {
+//   if (err) console.log(err);
+//   else console.log("minify success");
+// });
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
