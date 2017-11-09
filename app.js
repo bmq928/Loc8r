@@ -46,9 +46,9 @@ var clientFiles = [
   "app_client/common/directives/ratingStar/ratingStar.directive.js",
   "app_client/common/directives/navigator/navigator.controller.js"
 ];
-for(let i in clientFiles){
+for (let i in clientFiles) {
   let content = fs.readFileSync(clientFiles[i], "utf8");
-  uglifiedCode += uglify.minify(content, {compress : false}).code;
+  uglifiedCode += uglify.minify(content, { compress: false }).code;
 }
 // var uglifiedCode = uglify.minify(clientFiles, { compress: false }).code;
 fs.writeFile('public/client_app.min.js', uglifiedCode, function (err) {
@@ -75,17 +75,22 @@ app.use(passport.session());
 app.use("/api", apiRouter);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
-app.get('/', function(request, response) {
+app.get('/', function (request, response) {
   response.render('pages/index')
 });
-app.get('/cool', function(request, response) {
+app.get('/cool', function (request, response) {
   response.send(cool());
 });
 
-app.use(function (req, res, next) {
+// app.use(function (req, res, next) {
+//   res.sendFile(path.join(__dirname, 'app_client', 'index.html'));
+//   console.log("send file succees")
+// });
+
+app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'app_client', 'index.html'));
   console.log("send file succees")
-});
+})
 
 // console.log("send file complete");
 
