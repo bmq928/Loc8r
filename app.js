@@ -86,6 +86,8 @@ app.use(function (req, res, next) {
   res.sendFile(path.join(__dirname, 'app_client', 'index.html'));
 });
 
+console.log("send file complete");
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   var err = new Error('Not Found');
