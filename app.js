@@ -88,8 +88,9 @@ app.set('view engine', 'ejs');
 // });
 
 app.get('/', function (req, res) {
+  console.log("send file succees");
   res.sendFile(path.join(__dirname, 'app_client', 'index.html'));
-  console.log("send file succees")
+  
 })
 
 // console.log("send file complete");
