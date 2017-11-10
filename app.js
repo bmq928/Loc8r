@@ -90,7 +90,13 @@ app.set('view engine', 'ejs');
 //   console.log("send file succees")
 // });
 
-app.get('*', function (req, res) {
+app.get('/', function (req, res) {
+  console.log("send file succees");
+  res.sendFile(path.join(__dirname, 'app_client', 'index.html'));
+  
+})
+
+app.get('/favicon.ico ', function (req, res) {
   console.log("send file succees");
   res.sendFile(path.join(__dirname, 'app_client', 'index.html'));
   
