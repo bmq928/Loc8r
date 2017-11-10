@@ -1,19 +1,32 @@
 {
-    "name": "app",
-    "description": "Example contact list app using MEAN",
-    "keywords": [
-      "MEAN",
-      "Angular",
-      "Node",
-      "MongoDB",
-      "mLab"
-    ],
-    // "repository": "https://github.com/chrisckchang/mean-contactlist-angular2",
-    "success_url": "/",
-    "formation": {
-      "web": {
-        "quantity": 1,
-        "size": "free"
-      }
+  "name": "app",
+  "description": "Example contact list app using MEAN",
+  "keywords": [
+    "MEAN",
+    "Angular",
+    "Node",
+    "MongoDB",
+    "mLab"
+  ],
+  // "success_url": "/",
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "env": {
+    "NODE_ENV": {
+      "description": "read environment in node",
+      "value": "production"
+    },
+    "JWT_SECRET": {
+      "description": "secret for authentication",
+      "value": "JWT_SECRET"
+    },
+    "MONGO_URI": {
+      "description": "mongo uri",
+      "value": "mongodb://user_name:password@ds129315.mlab.com:29315/advanced_spa"
     }
   }
+}
