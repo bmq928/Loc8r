@@ -15,8 +15,5 @@
         "quantity": 1,
         "size": "free"
       }
-    },
-    "addons": [
-      "mongolab"
-    ]
+    }
   }
