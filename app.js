@@ -57,6 +57,7 @@ fs.writeFile('public/client_app.min.js', uglifiedCode, function (err) {
 });
 
 console.log(__dirname);
+console.log(require('fs').existsSync(__dirname + '/public'));
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
